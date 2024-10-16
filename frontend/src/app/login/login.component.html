@@ -1,0 +1,26 @@
+<p>login works!</p>
+<br>
+<h2>Log</h2>
+<br/>
+<br>
+<br>
+<ng-container *ngIf="isLogged() == false">
+  <div>
+    Email or username:
+    <input type="email" [(ngModel)]="email">
+  </div>
+  <br>
+  <div>
+    Password:
+    <input type="password" [(ngModel)]="password">
+  </div>
+  <br>
+  <br>
+  <button type="button" (click)="log(email, password)">login</button>
+</ng-container>
+
+<ng-container *ngIf="isLogged() == true">
+  <button type="button" (click)="logout()">logout</button>
+</ng-container>
+
+

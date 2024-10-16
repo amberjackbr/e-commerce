@@ -1,0 +1,14 @@
+<p>myproducts works!</p>
+
+<h3>Products you sell:</h3>
+<li *ngFor="let p of products">
+  <a href="/productdetails/{{p.id}}">id = {{p.id}}</a>
+  <br>
+   nome = {{p.name}}<br>
+   prezzo = {{p.price}}<br>
+   qt = {{p.quantity}} <br>
+   Select new quantity:
+   <input  type="number" min="0" max="1000" [defaultValue]=0 [(ngModel)]="array[products.indexOf(p)]">
+   <button type="button" (click)="modifyQuantity(p, array[products.indexOf(p)])">set quantity</button>
+</li>
+

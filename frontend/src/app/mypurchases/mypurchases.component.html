@@ -1,0 +1,10 @@
+<p>mypurchases works!</p>
+
+<h3>Purchase history:</h3>
+<li *ngFor="let p of purchases">
+  date = {{p.purchaseTime}}
+  <br>
+  <option *ngFor="let pr of p.productList" [ngValue]="productList">{{pr.product.name}} x {{pr.quantity}}</option>
+  <br>
+</li>
+

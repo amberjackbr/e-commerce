@@ -1,0 +1,25 @@
+<p>addproduct works!</p>
+
+<h3>Add a new product</h3>
+
+<div>
+  Name:
+  <input type="name" [(ngModel)]="name">
+</div>
+<br>
+<div>
+  Descriprion:
+  <input type="name" [(ngModel)]="description">
+</div>
+<br>
+<div>
+  Price:
+  <input type="number" [(ngModel)]="price">
+</div>
+<br>
+<div>
+  Quantity:
+  <input type="number" [(ngModel)]="quantity">
+</div>
+<br>
+<button type="button" (click)="add()">Add</button>

@@ -1,0 +1,36 @@
+<p>sign-up works!</p>
+<h3>register to our website!</h3>
+<br>
+<br>
+<br>
+<div>
+  First name:
+  <input type="firstName" [(ngModel)]="firstName">
+</div>
+<div>
+  Last name:
+  <input type="lastName" [(ngModel)]="lastName">
+</div>
+<div>
+  Email:
+  <input type="email" [(ngModel)]="email">
+</div>
+<div>
+  Phone number:
+  <input type="phoneNumber" [(ngModel)]="phoneNumber">
+</div>
+<div>
+  Password:
+  <input type="password" [(ngModel)]="password">
+</div>
+<div>
+  <form [formGroup]="rolesForm">
+    Role:
+    <select id="role" formControlName="role" [(ngModel)]="role">
+        <option *ngFor="let c of possibleRoles" [ngValue]="c">{{ c }}</option>
+    </select>
+  </form>
+</div>
+email = {{email}}
+role = {{role}}
+<button type="button" (click)="singUp(firstName, lastName, email, phoneNumber, password, role)">login</button>

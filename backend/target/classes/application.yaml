@@ -1,0 +1,61 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: admin
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/online_shop
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081/realms/onlineShop
+          jwk-set-uri: http://localhost:8081/realms/onlineShop/protocol/openid-connect/certs
+
+
+
+jwt:
+  auth:
+    converter:
+      resource-id: store-angular
+      principle-attribute: preferred_username
+
+server:
+  #ssl:
+  #key-store-password: password_certificate
+  #key-store-type: PKCS12
+  #key-store: /home/debian/ssl-cert/certificate.p12
+  compression:
+    enabled: 'true'
+  port: '8080'
+
+  #security:
+  #require-ssl: 'true'
+
+logging:
+  level:
+    it:
+      ShopOnlinePSW: DEBUG
+    org:
+      springframework: INFO
+
+springboot:
+  swagger-ui:
+    oauth:
+      client-id: onlineShop
+      client-secret:
+
+springdoc:
+  swagger-ui:
+    oauth:
+      client-id: store-angular
+      #client-secret: xCpQHL0CCPC5c3SIsB2LrMBBfoiolDvG
+      client-secret: JieiaA6uu7hf8tqjicZiMRmBzwbUBJZo
+
+
+realm: onlineShop
+server-url: http://localhost:8081
+client-id: admin-cli
+grant-type: password
+name: abc
+password: aaa
+

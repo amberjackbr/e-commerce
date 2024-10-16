@@ -1,0 +1,48 @@
+<a href="/">Welcome to {{title}}</a>
+<br>
+
+
+<ng-container *ngIf="isLogged() == true">
+  sei loggato!
+</ng-container>
+
+<ng-container *ngIf="isLogged() == false">
+  non sei loggato!
+  <br>
+  <div class="dropdown-content">
+    <a href="/login">Sign-in</a>
+    <br>
+    <a href="/sign-up">Register</a>
+    <br>
+    <a href="/productlist">Explore our products</a>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="isBuyerLogged() == true">
+  sei un buyer!
+  <br>
+  <div class="dropdown-content">
+    <a href="/login">Sign-out</a>
+    <br>
+    <a href="/productlist">Explore our products</a>
+    <br>
+    <a href="cart">My cart</a>
+    <br>
+    <a href="/mypurchases">My purchases</a>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="isSellerLogged() == true">
+  sei un seller!
+  <br>
+  <div class="dropdown-content">
+    <a href="/login">Sign-out</a>
+    <br>
+    <a href="/productlist">Explore our products</a>
+    <br>
+    <a href="/myproducts">My products</a>
+    <br>
+    <a href="/addproduct">Add product</a>
+  </div>
+</ng-container>
+

@@ -1,0 +1,13 @@
+<p>productlist works!</p>
+
+<li *ngFor="let p of products">
+  <a href="/productdetails/{{p.id}}">id = {{p.id}},</a>
+  id = {{p.id}},
+  nome = {{p.name}},
+  prezzo = {{p.price}},
+  qt = {{p.quantity}}
+  <ng-container *ngIf="isBuyerLogged()">
+    <button type="button" (click)="addToCart(p.id)">add to cart</button>
+  </ng-container>
+</li>
+
